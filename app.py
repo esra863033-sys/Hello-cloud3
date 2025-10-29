@@ -4,12 +4,6 @@ import psycopg2
 
 app = Flask(__name__)
 
-# Render tarafından otomatik sağlanan  veritabanı bağlantı bilgisi 
-
-
-
-
-
 # HTML ŞABLONU (tek sayfada form + liste ) 
 HTML = """
 <!doctype html>
