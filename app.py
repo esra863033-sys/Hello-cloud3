@@ -75,8 +75,11 @@ def index():
     if request.method == "POST":
         isim = (request.form.get("isim") or "").strip()
         if isim:
-            cur.execute("INSERT INTO ziyaretciler ORDER BY id DESC LIMIT 10")
-            isimler = [row[0] for now in cur.fetchall()]
+            cur.execute("INSERT INTO ziyaretciler (isim) VALUES (%s)", (isim,))
+            conn.commit()
+
+    cur.execute("SELECT isim FROM ziyaretciler ORDER BY id DESC LIMIT 10")
+    isimler = [row[0] for now in cur.fetchall()]
 
             cur.close()
             conn.close()
