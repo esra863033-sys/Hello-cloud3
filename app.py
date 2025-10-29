@@ -81,10 +81,10 @@ def index():
     cur.execute("SELECT isim FROM ziyaretciler ORDER BY id DESC LIMIT 10")
     isimler = [row[0] for now in cur.fetchall()]
 
-            cur.close()
-            conn.close()
+     cur.close()
+     conn.close()
 
-            return render_template_string(HTML,isimler=isimler)
+      return render_template_string(HTML,isimler=isimler)
 
-      if __name__ == "__main__":
+ if __name__ == "__main__":
           app.run(host="0.0.0.0", port=5000)
